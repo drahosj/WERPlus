@@ -1,4 +1,14 @@
 #! /bin/bash
+
+echo -n "Enter server username: "
+read SERVER_USERNAME
+
+echo -n "Enter server address: "
+read SERVER_ADDRESS
+
+echo -n "Enter server port: "
+read SERVER_PORT
+
 while true
 pushd target
 
@@ -65,10 +75,10 @@ popd
 
 #####Send data to server and call MySQL Refresh Script#####
 
-ssh root@127.0.0.1 -p 2288 'rm -r tournament-server/output'
+ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'rm -r tournament-server/output'
 
-scp -r  -P 2288 output root@127.0.0.1:tournament-server/
+scp -r  -P $SERVER_PORT output $SERVER_USERNAME@$SERVER_ADDRESS:tournament-server/
 
-ssh root@127.0.0.1 -p 2288 'tournament-server/refresh-mysql.sh'
+ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'tournament-server/refresh-mysql.sh'
 
 done
