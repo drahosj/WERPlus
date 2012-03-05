@@ -1,0 +1,21 @@
+c. 2012 Jake Drahos
+
+Released under the Do What The Fuck You Want Public License. See LICENSE for details.
+
+
+Contents of this folder
+
+README: This file
+
+LICENSE: Do What The Fuck You Want To Public License
+
+target: empty directory. When a file lands in "target", it is parsed by the script, then sent to the server
+
+parser.sh: This script runs in the background and waits for a file to land in target. When it does, it parses it and sends
+
+refresh-mysql: This script is placed on the server under a directory called tournament-server. It is called by parser.sh to put the data into a mysql database.
+
+
+How to use this program:
+
+God help you...
