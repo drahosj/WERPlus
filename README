@@ -1,4 +1,4 @@
-c. 2012 Jake Drahos
+All files c. 2012 Jake Drahos
 
 Released under the Do What The Fuck You Want Public License. See LICENSE for details.
 
@@ -10,6 +10,10 @@ README: This file
 LICENSE: Do What The Fuck You Want To Public License
 
 target: empty directory. When a file lands in "target", it is parsed by the script, then sent to the server
+
+http: directory containing files to be placed on web server
+	-select.php: Allows user to input DCI number
+	-display.php: View pairings based on DCI number entered at select.php
 
 parser.sh: This script runs in the background and waits for a file to land in target. When it does, it parses it and sends
 
