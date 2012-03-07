@@ -18,6 +18,9 @@ parser.sh: This script runs in the background and waits for a file to land in ta
 
 refresh-mysql: This script is placed on the server under a directory called tournament-server. It is called by parser.sh to put the data into a mysql database.
 
+http-local: Local http files for scrolling display
+	-scroll-pairings.html: Vertically scrolls (marquee) pairings
+
 
 How to use this program:
 
