@@ -16,7 +16,9 @@ http: directory containing files to be placed on web server
 
 parser.sh: This script runs in the background and waits for a file to land in target. When it does, it parses it and sends
 
-refresh-mysql: In addition to being left on the client, this script is placed on the server under a directory called tournament-server. It is called by parser.sh to put the data into a mysql database.
+refresh-mysql.sh: This script is placed on the server, both web and bgg
+ under a directory called tournament-server. It is called by parser.sh to put the data into a mysql database.
+
 
 http-local: Local http files for scrolling display
 	-scroll-pairings.html: Vertically scrolls (marquee) pairings

@@ -82,6 +82,8 @@ scp -r  -P $SERVER_PORT output $SERVER_USERNAME@$SERVER_ADDRESS:tournament-serve
 ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'tournament-server/refresh-mysql.sh'
 
 #####Call MySQL Refresh Script Locally#####
-./refresh-mysql.sh
+rm -r ~/tournament-server/output
+cp -r output ~/tournament-server/output
+~/tournament-server/refresh-mysql.sh
 
 done

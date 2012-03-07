@@ -1,6 +1,6 @@
 #! /bin/bash
 
-pushd tournament-server/output
+pushd ~/tournament-server/output
 
 EVENT=`cat event`
 ROUND=`cat round`
