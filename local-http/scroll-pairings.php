@@ -102,7 +102,7 @@ if ($letter == "z") break;
 
 echo 
 "<tr>
-<td><font size=5 color=orange>$tbl $letter</font></td>
+<td><font size=5 color=orange>$tbl</font></td>
 <td><font size=5 color=orange>$lastP</font></td>
 <td><font size=5 color=orange>$firstP</font></td>
 <td><font size=5 color=orange>$lastO</font></td>
