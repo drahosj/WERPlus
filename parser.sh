@@ -84,6 +84,6 @@ ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'tournament-server/refresh-
 #####Call MySQL Refresh Script Locally#####
 rm -r ~/tournament-server/output
 cp -r output ~/tournament-server/output
-~/tournament-server/refresh-mysql.sh
+~/tournament-server/refresh-mysql-local.sh
 
 done
