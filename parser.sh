@@ -24,7 +24,8 @@ do
 	TARGET_SIZE=`du . | cut -f 1`
 done
 
-sleep 5
+echo "File Found. Waiting"
+sleep 25
 
 #####Begin Raw Data Acquisition#####
 
