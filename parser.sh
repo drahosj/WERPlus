@@ -24,12 +24,24 @@ do
 	TARGET_SIZE=`du . | cut -f 1`
 done
 
-echo "File Found. Waiting"
-sleep 25
-
-#####Begin Raw Data Acquisition#####
-
 FILENAME=`ls`
+
+echo -n "File $FILENAME found. Waiting for write to finish."
+
+OLD_SIZE=1
+NEW_SIZE=0
+while [ `echo $OLD_SIZE` != `echo $NEW_SIZE` ]
+do 
+	OLD_SIZE=`stat $FILENAME | grep Size | cut -d ' ' -f 4`
+	echo $OLD_SIZE
+	sleep 1
+	echo -n .
+	echo $NEW_SIZE
+	NEW_SIZE=`stat $FILENAME | grep Size | cut -d ' ' -f 4`
+done
+echo ""	
+echo "Write Finished. Parsing file"
+#####Begin Raw Data Acquisition#####
 
 unzip $FILENAME
 
