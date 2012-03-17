@@ -20,7 +20,7 @@ TARGET_SIZE=`du . | cut -f 1`
 
 while [ "$TARGET_SIZE" = "4" ]
 do
-	sleep 1
+	sleep 3
 	TARGET_SIZE=`du . | cut -f 1`
 done
 
@@ -42,10 +42,21 @@ done
 echo ""	
 echo "Write Finished. Parsing file"
 
-if [ `cat $FILENAME | grep -i pairings` == "" ]
+unzip $FILENAME
+
+rm -f $FILENAME
+
+cp -r Documents/1/Pages ./
+
+rm -r Pages/_rels
+
+pushd Pages
+
+FILES=`ls`
+if [ "`cat $FILES | grep -i pairings | cut -d ' ' -f 1`" = "" ]
 then
-	source ../parse-standings.sh
+	source ../../parse-standings.sh
 else
-	source ../parse-pairings.sh
+	source ../../parse-pairings.sh
 fi
 done

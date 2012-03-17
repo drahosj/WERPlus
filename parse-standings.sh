@@ -1,16 +1,6 @@
 #! /bin/bash
 #####Begin Raw Data Acquisition#####
-unzip $FILENAME
-
-rm -f $FILENAME
-
-cp -r Documents/1/Pages ./
-
-rm -r Pages/_rels
-
-pushd Pages
-
-cat `ls` | grep -i unicodestring= | cut -d '"' -f 16 | tail -n +6 | head -n -1 > ../../output/standings
+cat `ls` | grep -i unicodestring= | cut -d '"' -f 16 | tail -n +8 > ../../output/standings
 cat `ls` | grep -i unicodestring= | cut -d '"' -f 16 | head -n 1 > ../../output/event
 
 popd
@@ -29,7 +19,7 @@ pushd output
 
 echo -n "" > standings.tsv
 
-cat pairings | while read LINE_CONTENTS
+cat standings | while read LINE_CONTENTS
 do
 for ELEMENT in $LINE_CONTENTS
 do
@@ -48,9 +38,9 @@ ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'rm -r tournament-server/ou
 
 scp -r  -P $SERVER_PORT output $SERVER_USERNAME@$SERVER_ADDRESS:tournament-server/
 
-ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'tournament-server/refresh-mysql-standings.sh'
+#ssh $SERVER_USERNAME@$SERVER_ADDRESS -p $SERVER_PORT 'tournament-server/refresh-mysql-standings.sh'
 
 #####Call MySQL Refresh Script Locally#####
-rm -r ~/tournament-server/output
-cp -r output ~/tournament-server/output
-~/tournament-server/refresh-mysql-local-standings.sh
+#rm -r ~/tournament-server/output
+#cp -r output ~/tournament-server/output
+#~/tournament-server/refresh-mysql-local-standings.sh

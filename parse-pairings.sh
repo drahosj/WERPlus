@@ -1,14 +1,6 @@
 #! /bin/bash
 #####Begin Raw Data Acquisition#####
-unzip $FILENAME
-
-rm -f $FILENAME
-
-cp -r Documents/1/Pages ./
-
-rm -r Pages/_rels
-
-pushd Pages
+echo "Parsing pairings..."
 
 cat `ls` | grep -i unicodestring= | cut -d '"' -f 16 | tail -n +6 | head -n -1 > ../../output/pairings
 cat `ls` | grep -i unicodestring= | cut -d '"' -f 16 | head -n 1 > ../../output/event
