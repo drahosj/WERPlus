@@ -1,13 +1,13 @@
 #! /bin/bash
 
-echo -n "Enter server username: "
-read SERVER_USERNAME
+#echo -n "Enter server username: "
+#read SERVER_USERNAME
 
-echo -n "Enter server address: "
-read SERVER_ADDRESS
+#echo -n "Enter server address: "
+#read SERVER_ADDRESS
 
-echo -n "Enter server port: "
-read SERVER_PORT
+#echo -n "Enter server port: "
+#read SERVER_PORT
 
 while true
 pushd target

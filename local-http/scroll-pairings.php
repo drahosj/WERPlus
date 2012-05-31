@@ -2,30 +2,30 @@
 <head>
 </head>
 <body bgcolor="black">
-<p align="justify"><font size=6 color="red"><u>==================A-L==========================================M-Z=========================</u></font></p>
+<p align="justify"><font size=6 color="white"><u>==================A-L==========================================M-Z=========================</u></font></p>
 </br>
 <table borders=1 cellspacing=20 cellpadding=0>
 <tr>
-<td><font size=5 color=red><u>Table</u></font></td>
-<td><font size=5 color=red><u>Last Name</u></font></td>
-<td><font size=5 color=red><u>First Name</u></font></td>
-<td><font size=5 color=red><u>Op. Last Name</u></font></td>
-<td><font size=5 color=red><u>Op. First Name</u></font></td>
-<td><font size=5 color=red><u>Points</u></font></td>
+<td><font size=5 color=white><u>Table</u></font></td>
+<td><font size=5 color=white><u>Last Name</u></font></td>
+<td><font size=5 color=white><u>First Name</u></font></td>
+<td><font size=5 color=white><u>Op. Last Name</u></font></td>
+<td><font size=5 color=white><u>Op. First Name</u></font></td>
+<td><font size=5 color=white><u>Points</u></font></td>
 <td><font size=5 color=black><u>space</u></font></td>
-<td><font size=5 color=blue><u>Table</u></font></td>
-<td><font size=5 color=blue><u>Last Name</u></font></td>
-<td><font size=5 color=blue><u>First Name</u></font></td>
-<td><font size=5 color=blue><u>Op. Last Name</u></font></td>
-<td><font size=5 color=blue><u>Op. First Name</u></font></td>
-<td><font size=5 color=blue><u>Points</u></font></td>
+<td><font size=5 color=white><u>Table</u></font></td>
+<td><font size=5 color=white><u>Last Name</u></font></td>
+<td><font size=5 color=white><u>First Name</u></font></td>
+<td><font size=5 color=white><u>Op. Last Name</u></font></td>
+<td><font size=5 color=white><u>Op. First Name</u></font></td>
+<td><font size=5 color=white><u>Points</u></font></td>
 </tr>
 </table>
 
 
 
 <?php
-echo "<font color=red>$letter</font>";
+echo "<font color=white>$letter</font>";
 
 $username="root";
 $password="toor";
@@ -102,12 +102,12 @@ if ($letter == "z") break;
 
 echo 
 "<tr>
-<td><font size=5 color=orange>$tbl</font></td>
-<td><font size=5 color=orange>$lastP</font></td>
-<td><font size=5 color=orange>$firstP</font></td>
-<td><font size=5 color=orange>$lastO</font></td>
-<td><font size=5 color=orange>$firstO</font></td>
-<td><font size=5 color=orange>$pts</font></td>
+<td><font size=5 color=white>$tbl</font></td>
+<td><font size=5 color=white>$lastP</font></td>
+<td><font size=5 color=white>$firstP</font></td>
+<td><font size=5 color=white>$lastO</font></td>
+<td><font size=5 color=white>$firstO</font></td>
+<td><font size=5 color=white>$pts</font></td>
 </tr>";
 $i++;
 
@@ -139,7 +139,7 @@ $num=mysql_numrows($result);
 mysql_close();
 
 while ($i < $num){
-echo "<font size=5 color=orange>$j</font>";
+echo "<font size=5 color=white>$j</font>";
 $tbl=mysql_result($result,$i,"gameTable");
 $lastP=mysql_result($result,$i,"lastNameP");
 $firstP=mysql_result($result,$i,"firstNameP");
@@ -149,12 +149,12 @@ $pts=mysql_result($result,$i,"points");
 
 echo 
 "<tr>
-<td><font size=5 color=green>$tbl</font></td>
-<td><font size=5 color=green>$lastP</font></td>
-<td><font size=5 color=green>$firstP</font></td>
-<td><font size=5 color=green>$lastO</font></td>
-<td><font size=5 color=green>$firstO</font></td>
-<td><font size=5 color=green>$pts</font></td>
+<td><font size=5 color=white>$tbl</font></td>
+<td><font size=5 color=white>$lastP</font></td>
+<td><font size=5 color=white>$firstP</font></td>
+<td><font size=5 color=white>$lastO</font></td>
+<td><font size=5 color=white>$firstO</font></td>
+<td><font size=5 color=white>$pts</font></td>
 </tr>";
 $i++;
 }?>
